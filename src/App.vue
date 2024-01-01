@@ -1,22 +1,32 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <HelloWorld />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-import Vue from 'vue'
-import 'vuetify/dist/vuetify.min.css'
+import HelloWorld from "./components/HelloWorld";
+import Vue from "vue";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
 
-import Vuetify from 'vuetify'
+Vue.use(Vuetify);
 
-Vue.use(Vuetify)
+const vuetify = new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        primary: "#4caf50",
+      },
+    },
+  },
+});
 
 export default {
-  name: 'App',
+  name: "App",
+  vuetify,
   components: {
     HelloWorld,
   },
